@@ -7,18 +7,8 @@
   <span class="form-group bmd-form-group">
       <button class="btn btn-primary" (click)="handleClickAdd(item.value)">Add Item</button>
       <button class="btn btn-primary" (click)="handleDelete()">Delete Selected</button>
-  </span>
-  
+  </span>  
   </div>
-
-
-<!-- <div style="align-items:center">
-<mat-list>
-  <mat-selection-list class="list-group">
-  <mat-list-option  *ngFor="let item of items" class="list-group-item">{{item}}</mat-list-option>
-  </mat-selection-list>
-</mat-list>
-</div> -->
 
 <div class= "container" style="align-items:center">
     <mat-selection-list class="list-group" [(ngModel)]="selectedOptions">
