@@ -1,21 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<form >
-    <div class="form-group">
-    <label for="inputtext1" class="bmd-label-static">Enter Item Here</label>
-    <input type="text" class="form-control" id="inputtext1" #item>
-    </div>
-    <span class="form-group bmd-form-group">
-        <button class="btn btn-primary" (click)="handleClickAdd(item.value)">Add Item</button>
-    </span>
-</form>
 
-<div style="align-items:center">
-  <mat-list>
-    <mat-selection-list #selections class="list-group">
-    <mat-list-option  *ngFor="let item of items" class="list-group-item">{{item}}</mat-list-option>
+<div class="container form-group">
+  <label for="inputtext1" class="bmd-label-static">Enter Item Here</label>
+  <input type="text" class="form-control" id="inputtext1" #item>
+  <br>
+  <span class="form-group bmd-form-group">
+      <button class="btn btn-primary" (click)="handleClickAdd(item.value)">Add Item</button>
+      <button class="btn btn-primary" (click)="handleDelete()">Delete Selected</button>
+  </span>
+  
+  </div>
+
+
+<!-- <div style="align-items:center">
+<mat-list>
+  <mat-selection-list class="list-group">
+  <mat-list-option  *ngFor="let item of items" class="list-group-item">{{item}}</mat-list-option>
+  </mat-selection-list>
+</mat-list>
+</div> -->
+
+<div class= "container" style="align-items:center">
+    <mat-selection-list class="list-group" [(ngModel)]="selectedOptions">
+    <mat-list-option  class="list-group-item" *ngFor="let item of items">{{item}}
+    </mat-list-option>
     </mat-selection-list>
-  </mat-list>
 </div>
-
-
-

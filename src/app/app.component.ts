@@ -7,11 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   items = [`First`, `Second`, `Third`, `Fourth`];
-  title = 'todolist';
-  value = '';
 
+  selectedOptions: string[] = [];
   handleClickAdd(value: string) {
-    this.value=value;
-    this.items.push(value);
+    if(value) {
+      this.items.push(value);
+      
+    }
+  }
+
+  handleDelete() {
+    this.selectedOptions.forEach(element => {
+      this.items.pop(element);
+    });
   }
 }
