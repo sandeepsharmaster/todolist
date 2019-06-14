@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MatListOption } from '@angular/material'
 
 @Component({
   selector: 'app-root',
