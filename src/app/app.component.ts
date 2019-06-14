@@ -8,12 +8,10 @@ import { MatListOption } from '@angular/material'
 })
 export class AppComponent {
   items = [];
-  emptyvalue = '';
   selectedOptions :string[];
   handleClickAdd(value: string) {
     if(value) {
       this.items.push(value);
-      
     }
   }
 
