@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatListOption } from '@angular/material'
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   items = [];
+  emptyvalue = '';
 
-  selectedOptions: string[] = [];
+  selectedOptions :string[];
+  selectedOption;
+  current_selected: string;
   handleClickAdd(value: string) {
     if(value) {
       this.items.push(value);
@@ -17,8 +21,20 @@ export class AppComponent {
   }
 
   handleDelete() {
+    console.log(this.selectedOptions)
     this.selectedOptions.forEach(element => {
-      this.items.pop(element);
+     console.log(element)
     });
+  }
+
+  onSelection(e, v){
+    console.log(this.selectedOptions);
+    //console.log(v)
+    for(let a of v) {
+      console.log(a.value);
+      //let matlist :MatListOption = v;
+      
+    }
+    //this.selectedOptions=selectedOptions;
   }
 }
