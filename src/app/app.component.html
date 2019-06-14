@@ -5,8 +5,12 @@
   <input type="text" class="form-control" id="inputtext1" #item>
   <br>
   <span class="form-group bmd-form-group">
-      <button class="btn btn-primary" (click)="handleClickAdd(item.value)">Add Item</button>
-      <button class="btn btn-danger" (click)="handleDelete()">Delete Selected</button>
+      <button class="btn btn-primary" (click)="handleClickAdd(item.value)">
+        <i class="material-icons">add</i>
+      </button>
+      <button class="btn btn-danger" (click)="handleDelete()">
+        <i class="material-icons">delete_outline</i>
+      </button>
   </span>  
   </div>
 
