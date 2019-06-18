@@ -23,7 +23,7 @@ public class ToDoList {
 	@Getter
 	@Setter
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "to_do_list_id")
+	@JoinColumn(name = "id")
 	private List<UserList> userList;
 	
 }
