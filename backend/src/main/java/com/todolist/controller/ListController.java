@@ -24,7 +24,7 @@ public class ListController {
 	@PostMapping(value = "/createList")
 	public ResponseEntity<String> registerUser(@RequestBody ToDoList toDoList) {
 		// Save details
-		listService.registerUser(toDoList);
+		listService.createToDoList(toDoList);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
