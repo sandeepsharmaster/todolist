@@ -19,14 +19,7 @@ public class ToDoList {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	public ToDoList() {
-		
-	}
-	
-	public ToDoList(Long id, List<UserList> userList) {
-		this.id = id;
-		this.userList=userList;
-	}
+
 	@Getter
 	@Setter
 	@OneToMany(cascade = CascadeType.ALL)
