@@ -18,4 +18,14 @@ public class UserList {
 	@Getter
 	@Setter
 	private String listItem;
+	
+	
+	public UserList() {
+		
+	}
+	
+	public UserList(Long id, String listItem) {
+		this.id = id;
+		this.listItem = listItem;
+	}
 }

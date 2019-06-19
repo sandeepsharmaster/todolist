@@ -14,16 +14,16 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@Api(value = "ToDoList", description = "Operations related to todolist service")
+@Api(value = "ToDoList")
 public class ListController {
 	
 	@Autowired
 	private ListService listService;
 
-	@ApiOperation(value = "Register new User")
+	@ApiOperation(value = "Create ToDo List")
 	@PostMapping(value = "/createList")
 	public ResponseEntity<String> registerUser(@RequestBody ToDoList toDoList) {
-		// Save details
+		// Save details		
 		listService.createToDoList(toDoList);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
