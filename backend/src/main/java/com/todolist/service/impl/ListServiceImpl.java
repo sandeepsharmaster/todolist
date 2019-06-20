@@ -12,10 +12,16 @@ public class ListServiceImpl implements ListService {
 
 	@Autowired
 	private ToDoListRepository toDoListRepository;
-	
+
 	@Override
 	public void createToDoList(ToDoList toDoList) {
 		toDoListRepository.save(toDoList);
+	}
+
+	@Override
+	public void deleteList(Long id) {
+
+		toDoListRepository.deleteById(id);
 	}
 
 }
