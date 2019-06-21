@@ -1,6 +1,7 @@
 package com.todolist.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,10 +30,13 @@ public class ListController {
 	public ResponseEntity<String> registerUser(/* @RequestBody ToDoList toDoList */) {
 		// Save details
 		
-		UserList userList = new UserList(null, "New Item");
+		UserList userList = new UserList();
+		userList.setListItem("This is item");
 		ArrayList al = new ArrayList();
 		al.add(userList);
-		ToDoList toDoList = new ToDoList(null, al);
+		
+		ToDoList toDoList = new ToDoList();
+		toDoList.setUserList(al);
 		
 		listService.createToDoList(toDoList);
 		return new ResponseEntity<>(HttpStatus.OK);
