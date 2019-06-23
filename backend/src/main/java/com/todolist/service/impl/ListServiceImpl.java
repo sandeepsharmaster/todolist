@@ -1,9 +1,14 @@
 package com.todolist.service.impl;
 
+import java.io.IOException;
+import java.sql.SQLDataException;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.todolist.entity.ToDoList;
+import com.todolist.entity.UserList;
 import com.todolist.repository.ToDoListRepository;
 import com.todolist.repository.UserListRepository;
 import com.todolist.service.ListService;
@@ -31,6 +36,17 @@ public class ListServiceImpl implements ListService {
 	@Override
 	public void deleteListItem(Long id) {
 		userListRepository.deleteById(id);
+	}
+
+	@Override
+	public void updateListItem(UserList userList) throws SQLDataException {
+		Optional<UserList> findOption = userListRepository.findById(userList.getId());
+		if(findOption.isPresent()) {
+			userListRepository.save(userList);
+		}
+		else {
+			throw new SQLDataException("List Item Does not Exist !!!");
+		}
 	}
 
 }
