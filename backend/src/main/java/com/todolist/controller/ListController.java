@@ -1,14 +1,13 @@
 package com.todolist.controller;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.todolist.entity.ToDoList;
@@ -32,7 +31,10 @@ public class ListController {
 		
 		UserList userList = new UserList();
 		userList.setListItem("This is item");
-		ArrayList al = new ArrayList();
+		userList.setListItem("This is item2");
+		userList.setListItem("This is item3");
+		userList.setListItem("This is item4");
+		ArrayList<UserList> al = new ArrayList<UserList>();
 		al.add(userList);
 		
 		ToDoList toDoList = new ToDoList();
@@ -42,10 +44,13 @@ public class ListController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
-	@GetMapping(value = "/delete")
-	public ResponseEntity<String> testDelete() {
-		
-		listService.deleteList(1L);
+	@DeleteMapping(value = "/deleteitem")
+	public ResponseEntity<String> deleteItem(@RequestParam(name = "itemid") Long itemId) {
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	@DeleteMapping(value = "/deletelist")
+	public ResponseEntity<String> deleteList(@RequestParam(name = "listid") Long listId) {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
