@@ -25,4 +25,9 @@ public class ListServiceImpl implements ListService {
 		toDoListRepository.deleteById(id);
 	}
 
+	@Override
+	public void deleteListItem(Long id) {
+		toDoListRepository.deleteById(id);
+	}
+
 }

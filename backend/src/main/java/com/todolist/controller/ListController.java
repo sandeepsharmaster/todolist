@@ -31,11 +31,17 @@ public class ListController {
 		
 		UserList userList = new UserList();
 		userList.setListItem("This is item");
-		userList.setListItem("This is item2");
-		userList.setListItem("This is item3");
-		userList.setListItem("This is item4");
+		UserList userList2 = new UserList();
+		userList2.setListItem("This is item2");
+		UserList userList3 = new UserList();
+		userList3.setListItem("This is item3");
+		UserList userList4 = new UserList();
+		userList4.setListItem("This is item4");
 		ArrayList<UserList> al = new ArrayList<UserList>();
 		al.add(userList);
+		al.add(userList2);
+		al.add(userList3);
+		al.add(userList4);
 		
 		ToDoList toDoList = new ToDoList();
 		toDoList.setUserList(al);
@@ -46,11 +52,13 @@ public class ListController {
 	
 	@DeleteMapping(value = "/deleteitem")
 	public ResponseEntity<String> deleteItem(@RequestParam(name = "itemid") Long itemId) {
+		listService.deleteListItem(itemId);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
 	@DeleteMapping(value = "/deletelist")
 	public ResponseEntity<String> deleteList(@RequestParam(name = "listid") Long listId) {
+		listService.deleteList(listId);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
