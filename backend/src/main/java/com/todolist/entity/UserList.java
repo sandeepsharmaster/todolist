@@ -23,9 +23,9 @@ public class UserList {
 	private Long id;
 
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	/*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "todolist_id", insertable = true)
-    private ToDoList todoList;
+    private ToDoList todoList;*/
 	
 	@Getter
 	@Setter

@@ -30,8 +30,8 @@ public class ToDoList {
 
 	@Getter
 	@Setter
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "todoList")
-	// @JoinColumn(name = "id")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+	@JoinColumn(name = "todolist_id", nullable = false, updatable = true)
 	private List<UserList> userList;
 	
 	
