@@ -35,14 +35,14 @@ public class ListController {
 	}
 
 	@ApiOperation(value = "Delete List Item")
-	@DeleteMapping(value = "/deleteitem")
+	@DeleteMapping(value = "/deleteItem")
 	public ResponseEntity<String> deleteItem(@RequestParam(name = "itemid") Long itemId) {
 		listService.deleteListItem(itemId);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "Delete List")
-	@DeleteMapping(value = "/deletelist")
+	@DeleteMapping(value = "/deleteList")
 	public ResponseEntity<String> deleteList(@RequestParam(name = "listid") Long listId) {
 		listService.deleteList(listId);
 		return new ResponseEntity<>(HttpStatus.OK);
