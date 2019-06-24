@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
+import {ToDoListService} from '../service/todolist.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,9 @@ import { FormsModule } from '@angular/forms';
     MatListModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ToDoListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
