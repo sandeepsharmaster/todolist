@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -74,7 +75,7 @@ public class ListController {
 	}
 
 	@ApiOperation(value = "Add List Item")
-	@PatchMapping(value = "/addListItem")
+	@PutMapping(value = "/addListItem")
 	public ResponseEntity<String> addListItem(@RequestBody ToDoList todoList) {
 		listService.addListItem(todoList);
 		return new ResponseEntity<>(HttpStatus.OK);
