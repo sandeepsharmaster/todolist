@@ -1,7 +1,6 @@
 package com.todolist.controller;
 
 import java.sql.SQLDataException;
-import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,25 +30,7 @@ public class ListController {
 	@ApiOperation(value = "Create ToDo List")
 	@PostMapping(value = "/createList")
 	public ResponseEntity<String> registerUser(@RequestBody ToDoList toDoList) {
-		// Save details
-		UserList userList = new UserList();
-		userList.setListItem("This is item");
-		UserList userList2 = new UserList();
-		userList2.setListItem("This is item2");
-		UserList userList3 = new UserList();
-		userList3.setListItem("This is item3");
-		UserList userList4 = new UserList();
-		userList4.setListItem("This is item4");
-		ArrayList<UserList> al = new ArrayList<UserList>();
-		al.add(userList);
-		al.add(userList2);
-		al.add(userList3);
-		al.add(userList4);
-
-		ToDoList toDoList2 = new ToDoList();
-		toDoList.setUserList(al);
-
-		listService.createToDoList(toDoList2);
+		listService.createToDoList(toDoList);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
