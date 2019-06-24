@@ -1,6 +1,5 @@
 package com.todolist.service.impl;
 
-import java.io.IOException;
 import java.sql.SQLDataException;
 import java.util.Optional;
 
@@ -25,7 +24,6 @@ public class ListServiceImpl implements ListService {
 	@Override
 	public void createToDoList(ToDoList toDoList) {
 		toDoListRepository.save(toDoList);
-
 	}
 
 	@Override
@@ -41,12 +39,17 @@ public class ListServiceImpl implements ListService {
 	@Override
 	public void updateListItem(UserList userList) throws SQLDataException {
 		Optional<UserList> findOption = userListRepository.findById(userList.getId());
-		if(findOption.isPresent()) {
+		if (findOption.isPresent()) {
 			userListRepository.save(userList);
-		}
-		else {
+		} else {
 			throw new SQLDataException("List Item Does not Exist !!!");
 		}
+	}
+
+	@Override
+	public void addListItem(ToDoList todoList) {
+		toDoListRepository.save(todoList);
+
 	}
 
 }

@@ -13,4 +13,6 @@ public interface ListService {
 	public void deleteListItem(Long id);
 	
 	public void updateListItem(UserList userList) throws SQLDataException;
+	
+	public void addListItem(ToDoList todoList);
 }
