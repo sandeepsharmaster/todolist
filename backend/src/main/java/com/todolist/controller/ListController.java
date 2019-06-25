@@ -35,7 +35,7 @@ public class ListController {
 	}
 	
 	@ApiOperation(value = "Get list")
-	@PostMapping(value = "/createList")
+	@PostMapping(value = "/getList")
 	public ResponseEntity<String> getUserList(@RequestParam Long listId) {
 		listService.getList(listId);
 		return new ResponseEntity<>(HttpStatus.OK);
