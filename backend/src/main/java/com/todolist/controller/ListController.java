@@ -33,6 +33,13 @@ public class ListController {
 		listService.createToDoList(toDoList);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+	@ApiOperation(value = "Get list")
+	@PostMapping(value = "/createList")
+	public ResponseEntity<String> getUserList(@RequestParam Long listId) {
+		listService.getList(listId);
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
 
 	@ApiOperation(value = "Delete List Item")
 	@DeleteMapping(value = "/deleteItem")

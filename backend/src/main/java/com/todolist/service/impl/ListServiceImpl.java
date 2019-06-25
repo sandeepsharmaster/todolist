@@ -1,6 +1,7 @@
 package com.todolist.service.impl;
 
 import java.sql.SQLDataException;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,13 @@ public class ListServiceImpl implements ListService {
 	public void addListItem(ToDoList todoList) {
 		toDoListRepository.save(todoList);
 
+	}
+
+	@Override
+	public List<UserList> getList(Long id) {
+		Optional<ToDoList> todoListOptional = toDoListRepository.findById(id);
+		ToDoList todoList = todoListOptional.get();
+		return todoList.getUserList();
 	}
 
 }
