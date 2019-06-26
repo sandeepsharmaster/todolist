@@ -1,6 +1,7 @@
 package com.todolist.controller;
 
 import java.sql.SQLDataException;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,9 +37,9 @@ public class ListController {
 	
 	@ApiOperation(value = "Get list")
 	@PostMapping(value = "/getList")
-	public ResponseEntity<String> getUserList(@RequestParam Long listId) {
-		listService.getList(listId);
-		return new ResponseEntity<>(HttpStatus.OK);
+	public ResponseEntity<List<UserList>> getUserList(@RequestParam Long listId) {
+		List<UserList> userlist= listService.getList(listId);
+		return new ResponseEntity<List<UserList>>(userlist, HttpStatus.OK);
 	}
 
 	@ApiOperation(value = "Delete List Item")
