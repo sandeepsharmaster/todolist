@@ -5,7 +5,7 @@
   <input type="text" class="form-control" id="inputtext1" #item>
   <br>
   <span class="form-group bmd-form-group">
-      <button class="btn btn-primary" (click)="handleClickAdd(item.value)">
+      <button class="btn btn-primary" (click)="handleClickAdd(item.value);item.value=''">
         <i class="material-icons">add</i>
       </button>
       <button class="btn btn-danger" (click)="handleDelete()">

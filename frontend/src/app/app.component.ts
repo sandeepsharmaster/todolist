@@ -6,11 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   items = [];
   selectedOptions :string[];
   handleClickAdd(value: string) {
     if(value) {
       this.items.push(value);
+      
     }
   }
 
