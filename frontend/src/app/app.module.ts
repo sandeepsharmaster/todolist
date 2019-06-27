@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import {ToDoListService} from '../service/todolist.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {ToDoListService} from '../service/todolist.service';
     BrowserModule,
     BrowserAnimationsModule,
     MatListModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ToDoListService],
   bootstrap: [AppComponent]
