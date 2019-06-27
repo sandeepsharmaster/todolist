@@ -34,11 +34,17 @@ export class AppComponent implements OnInit {
   }
 
   getToDoList() {
-    this.todolistservice.getListById().subscribe(todolist => {
-      this.userList = todolist.userList;
-      console.log(this.userList);
+    this.todolistservice.getListById().subscribe(userList => {
+      console.log(userList)
+      this.userList = userList;
+      this.userList.forEach(
+        element => {
+          console.log(element.listItem);
+          this.items.push(element.listItem);
+        }
+      );
   });
 
-  
+
   }
 }
