@@ -7,7 +7,7 @@ import { UserList } from 'src/types/userlist.type';
 @Injectable()
 export class ToDoListService {
     //static url for now
-    url: string = 'http://localhost:8080/getList?listId=1';
+    url: string = 'http://localhost:8080/getList?listId=5';
     
     constructor(private http: HttpClient) { }
 

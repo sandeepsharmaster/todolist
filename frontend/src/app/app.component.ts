@@ -29,7 +29,9 @@ export class AppComponent implements OnInit {
   handleDelete() {
     console.log(this.selectedOptions)
     this.selectedOptions.forEach(element => {
-     console.log(element)
+      this.userList = this.userList.filter(
+        userlistObject => userlistObject.listItem === element);
+     console.log(this.userList);
     });
   }
 
