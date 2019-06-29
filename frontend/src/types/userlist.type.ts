@@ -1,4 +1,4 @@
 export class UserList {
-    userlistid: number;
+    id: number;
     listItem: string;
 }

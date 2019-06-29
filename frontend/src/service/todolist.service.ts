@@ -8,10 +8,16 @@ import { UserList } from 'src/types/userlist.type';
 export class ToDoListService {
     //static url for now
     url: string = 'http://localhost:8080/getList?listId=5';
+
+    deleteUrl : string = `http://localhost:8080/deleteItem?itemid=`;
     
     constructor(private http: HttpClient) { }
 
     public getListById(): Observable<UserList[]> {
         return this.http.get<UserList[]>(this.url);
-  }
+    }
+
+    public deleteListItem(itemid: number) : Observable<any> {
+        return this.http.delete(this.deleteUrl + itemid);
+    }
 }

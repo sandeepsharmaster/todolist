@@ -33,12 +33,17 @@ export class AppComponent implements OnInit {
         userlistObject => userlistObject.listItem === element);
      console.log(this.userList);
     });
+    this.userList.forEach(userlistObject => {
+      this.todolistservice.deleteListItem(userlistObject.id).subscribe();
+    });
+    this.getToDoList();
   }
 
   getToDoList() {
     this.todolistservice.getListById().subscribe(userList => {
       console.log(userList)
       this.userList = userList;
+      this.items = [];
       this.userList.forEach(
         element => {
           console.log(element.listItem);
