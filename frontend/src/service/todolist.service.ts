@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ToDoList } from 'src/types/todolist.type';
 import { UserList } from 'src/types/userlist.type';
 
 @Injectable()
