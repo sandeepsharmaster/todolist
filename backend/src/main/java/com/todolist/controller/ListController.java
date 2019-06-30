@@ -1,6 +1,7 @@
 package com.todolist.controller;
 
 import java.sql.SQLDataException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,4 +73,36 @@ public class ListController {
 		listService.addListItem(todoList);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
+	
+	@ApiOperation(value = "Create test data")
+	@GetMapping(value = "/createData")
+	public ResponseEntity<String> createTestData() {
+
+		UserList userList1 = new UserList();
+		userList1.setListItem("Userlist1 item");
+		
+		UserList userList2 = new UserList();
+		userList2.setListItem("Userlist2 item");
+		
+		UserList userList3 = new UserList();
+		userList3.setListItem("Userlist3 item");
+		
+		UserList userList4 = new UserList();
+		userList4.setListItem("Userlist4 item");
+		
+		ArrayList<UserList> arlist = new ArrayList<UserList>();
+		arlist.add(userList1);
+		arlist.add(userList2);
+		arlist.add(userList3);
+		arlist.add(userList4);
+		
+		ToDoList todo= new ToDoList();
+		todo.setUserList(arlist);
+		
+		listService.createToDoList(todo);
+		
+		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	
 }

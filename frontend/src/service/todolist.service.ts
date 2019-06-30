@@ -7,7 +7,7 @@ import { UserList } from 'src/types/userlist.type';
 @Injectable()
 export class ToDoListService {
     //static url for now
-    url: string = 'http://localhost:8080/getList?listId=5';
+    url: string = 'http://localhost:8080/getList?listId=14';
 
     deleteUrl : string = `http://localhost:8080/deleteItem?itemid=`;
     
